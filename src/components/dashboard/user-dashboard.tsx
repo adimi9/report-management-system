@@ -12,7 +12,7 @@ import ReportForm from '@/components/reports/ReportForm';
 import ReportFilters from '@/components/reports/ReportFilters';
 
 const UserReportsPage = () => {
-  const { data: session, status } = useSession();
+  const { data: session } = useSession();
   const user = session?.user;
 
   const [reports, setReports] = useState<Report[]>([]);

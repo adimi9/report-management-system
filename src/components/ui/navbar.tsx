@@ -17,7 +17,7 @@ import { User, LogOut } from 'lucide-react';
 import { User as UserType } from '@/types';
 
 const Navbar = () => {
-  const { data: session, status } = useSession(); 
+  const { data: session } = useSession(); 
   const user = session?.user as UserType; 
   const router = useRouter(); 
 

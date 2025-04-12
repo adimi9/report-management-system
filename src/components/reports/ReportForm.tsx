@@ -23,7 +23,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import { Report } from '@/types';
+import { Report, ReportType } from '@/types';
 import { useSession } from 'next-auth/react';
 
 // --- ReportForm Component ---
@@ -50,15 +50,15 @@ interface ReportFormProps {
 }
 
 const ReportForm = ({ onSubmit, initialData, onCancel }: ReportFormProps) => {
-  const { data: session, status } = useSession();
+  const { data: session } = useSession();
   const user = session?.user; 
   
   const form = useForm<ReportFormValues>({
     resolver: zodResolver(reportSchema),
     defaultValues: {
-      type: (initialData?.type as any) || 'review',
+      type: (initialData?.type as ReportType) || 'review',
       target_id: initialData?.target_id || '',
-      reason: (initialData?.reason as any) || 'spam',
+      reason: (initialData?.reason as string) || 'spam',
       description: initialData?.description || '',
     },
   });

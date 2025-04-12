@@ -38,7 +38,7 @@ export async function POST(req: NextRequest) {
     });
 
     // --- Remove Password from Response ---
-    const { password: _password, id, ...userWithoutPassword } = user;
+    const { id, ...userWithoutPassword } = user;
 
     // --- Convert ID to String for Serialization ---
     const userWithoutPasswordStringified = {

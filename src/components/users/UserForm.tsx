@@ -21,6 +21,7 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { User } from '@/types';
+import { UserRole } from '@prisma/client';
 
 // --- UserForm Component ---
 // This component is used for adding or updating a user's information, including name, email, and role.
@@ -46,7 +47,7 @@ const UserForm = ({ onSubmit, initialData, onCancel }: UserFormProps) => {
       id: initialData?.id, // --- Initialize form with the provided ID ---
       name: initialData?.name || '', // --- Initialize form with the provided name ---
       email: initialData?.email || '', // --- Initialize form with the provided email ---
-      role: (initialData?.role as any) || 'user', // --- Initialize form with the provided role ---
+      role: (initialData?.role as UserRole) || 'user', // --- Initialize form with the provided role ---
     },
   });
 

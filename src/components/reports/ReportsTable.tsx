@@ -164,7 +164,7 @@ const ReportsTable = ({
                     </>
                   )}
                   <TableCell>
-                    <Badge variant={getStatusBadgeVariant(report.status) as any}>
+                    <Badge variant={getStatusBadgeVariant(report.status) as ReportStatus}>
                       {report.status}
                     </Badge>
                   </TableCell>

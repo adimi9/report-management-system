@@ -38,7 +38,6 @@ interface ResponseFormProps  {
 }
 
 const ResponseForm = ({
-  report,
   onSubmit,
   onCancel,
   label = 'Response Reason',

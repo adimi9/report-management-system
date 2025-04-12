@@ -8,7 +8,7 @@ import prisma from '../../../lib/prisma';
 import { user } from '@prisma/client';
 
 // --- GET Handler (Fetch Users) ---
-export async function GET(req: NextRequest) {
+export async function GET() {
   try {
     const session = await getServerSession(authOptions);
 

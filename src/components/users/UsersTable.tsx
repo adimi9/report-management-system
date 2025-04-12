@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { format } from 'date-fns';
-import { MoreHorizontal, Edit, Trash2, Filter } from 'lucide-react';
+import { MoreHorizontal, Edit, Trash2 } from 'lucide-react';
 import { User, SortingState } from '@/types';
 import { Button } from '@/components/ui/button';
 import {

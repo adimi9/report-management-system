@@ -2,10 +2,8 @@
 
 import React, { useState, useEffect } from 'react';
 import { User } from '@/types';
-import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { toast } from 'sonner';
-import { Plus } from 'lucide-react';
 import UsersTable from '@/components/users/UsersTable';
 import UserForm from '@/components/users/UserForm';
 import ConfirmDialog from '@/components/ui/ConfirmDialog';

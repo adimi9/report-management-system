@@ -5,7 +5,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { getServerSession } from 'next-auth';
 import prisma from '../../../lib/prisma';
 import { authOptions } from '../auth/[...nextauth]/route'; // Import authentication options
-import { ReportType, ReportStatus } from '@prisma/client';
+import { ReportType } from '@prisma/client';
 
 // --- ReportRequest Interface ---
 interface ReportRequest {

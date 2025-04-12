@@ -8,8 +8,6 @@ import {
 } from '@/components/ui/select';
 import { Label } from '@/components/ui/label';
 import { ReportStatus, ReportType } from '@/types';
-import { ArrowDownAZ, ArrowUpAZ } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 
 // --- ReportFilters Component ---
 // This component renders filters for reports. It includes filtering by status, type,
@@ -28,8 +26,6 @@ const ReportFilters = ({
   typeFilter,
   onStatusFilterChange,
   onTypeFilterChange,
-  sortOrder = 'desc',
-  onSortOrderChange,
 }: ReportFiltersProps) => {
   return (
     <div className="flex flex-col md:flex-row gap-4">
