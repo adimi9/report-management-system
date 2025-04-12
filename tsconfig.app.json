@@ -1,0 +1,43 @@
+{
+    "compilerOptions": {
+      "composite": true,
+      "target": "ES2022",
+      "useDefineForClassFields": true,
+      "lib": ["DOM", "DOM.Iterable", "ES2023"],
+      "module": "ESNext",
+      "moduleResolution": "bundler",
+      "skipLibCheck": true,
+      "allowJs": true,
+      "resolveJsonModule": true,
+      "esModuleInterop": true,
+      "isolatedModules": true,
+      "moduleDetection": "force",
+      "allowImportingTsExtensions": false,
+      "jsx": "preserve",
+      
+      /* Linting & type safety */
+      "strict": true,
+      "noImplicitAny": false,
+      "noUnusedLocals": false,
+      "noUnusedParameters": false,
+      "noFallthroughCasesInSwitch": true,
+  
+      "baseUrl": ".",
+      "paths": {
+        "@/*": ["./src/*"]
+      },
+  
+      "plugins": [
+        {
+          "name": "next"
+        }
+      ]
+    },
+    "include": [
+      "next-env.d.ts",
+      "src",
+      ".next/types/**/*.ts"
+    ],
+    "exclude": ["node_modules"]
+  }
+  
