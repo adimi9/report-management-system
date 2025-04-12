@@ -23,7 +23,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import { Report, ReportType } from '@/types';
+import { Report, ReportReason, ReportType } from '@/types';
 import { useSession } from 'next-auth/react';
 
 // --- ReportForm Component ---
@@ -58,7 +58,7 @@ const ReportForm = ({ onSubmit, initialData, onCancel }: ReportFormProps) => {
     defaultValues: {
       type: (initialData?.type as ReportType) || 'review',
       target_id: initialData?.target_id || '',
-      reason: (initialData?.reason as string) || 'spam',
+      reason: (initialData?.reason as ReportReason) || 'spam',
       description: initialData?.description || '',
     },
   });
