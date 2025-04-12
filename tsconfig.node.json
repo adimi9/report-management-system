@@ -1,0 +1,20 @@
+{
+    "compilerOptions": {
+      "composite": true,
+      "target": "ES2022",
+      "lib": ["ES2023"],
+      "module": "ESNext",
+      "moduleResolution": "bundler",
+      "skipLibCheck": true,
+      "allowJs": true,
+      "resolveJsonModule": true,
+      "esModuleInterop": true,
+      "isolatedModules": true,
+      "strict": true,
+      "noUnusedLocals": false,
+      "noUnusedParameters": false,
+      "noFallthroughCasesInSwitch": true
+    },
+    "include": ["next.config.ts", "scripts/**/*", "**/*.ts", "src/app/dashboard/page.tsx", "src/hooks/use-toast.ts"]
+  }
+  
