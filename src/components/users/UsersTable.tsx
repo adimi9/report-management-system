@@ -67,7 +67,7 @@ const UsersTable = ({ users, onEdit, onDelete }: UsersTableProps) => {
       if (!sorting) return 0;
 
       const column = sorting.id as keyof User;
-      if (column === 'createdAt') {
+      if (column === 'created_at') {
         const dateA = a[column] ? new Date(a[column] as Date).getTime() : 0;
         const dateB = b[column] ? new Date(b[column] as Date).getTime() : 0;
         return sorting.desc ? dateB - dateA : dateA - dateB;
