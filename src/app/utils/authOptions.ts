@@ -1,7 +1,7 @@
 // src/app/utils/authOptions.ts
 import { NextAuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
-import prisma from "../../lib/prisma";"; // adjust path based on your structure
+import prisma from "../../lib/prisma";
 import { comparePasswords } from "../api/utils";
 import { UserRole } from "@prisma/client";
 
