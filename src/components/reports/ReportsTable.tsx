@@ -9,7 +9,7 @@ import {
   CheckCircle,
   XCircle,
 } from 'lucide-react';
-import { Report, ReportStatus, SortingState } from '@/types';
+import { BadgeVariant, Report, ReportStatus, SortingState } from '@/types';
 import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
@@ -74,20 +74,31 @@ const ReportsTable = ({
 
   // --- Sort Reports ---
   const sortedReports = [...reports].sort((a, b) => {
-    if (!sorting || !sorting.id || !a || !b) return 0;
-
-    const column = sorting.id as keyof Report;
-    if (column === 'createdAt' || column === 'resolvedAt') {
-      const dateA = a[column] ? new Date(a[column] as Date).getTime() : 0;
-      const dateB = b[column] ? new Date(b[column] as Date).getTime() : 0;
+    if (!sorting || !sorting.id || !a || !b) return 0; // Early return if sorting or a/b are invalid
+  
+    const column = sorting.id as keyof Report; // column is a key of Report
+  
+    // Handle date columns first
+    if (column === 'created_at' || column === 'resolved_at') {
+      const dateA = a[column] ? new Date(a[column] as string | Date).getTime() : 0;
+      const dateB = b[column] ? new Date(b[column] as string | Date).getTime() : 0;
       return sorting.desc ? dateB - dateA : dateA - dateB;
     }
-
-    if (a[column] && b[column] && column) {
-      if (a[column] < b[column]) return sorting.desc ? 1 : -1;
-      if (a[column] > b[column]) return sorting.desc ? -1 : 1;
+  
+    // Handle other columns
+    if (a && b && column) {
+      // Ensure the values are defined and comparable
+      const aValue = a[column];
+      const bValue = b[column];
+  
+      // Check if values exist and are of comparable types
+      if (aValue !== undefined && bValue !== undefined) {
+        if (aValue < bValue) return sorting.desc ? 1 : -1;
+        if (aValue > bValue) return sorting.desc ? -1 : 1;
+      }
     }
-    return 0;
+  
+    return 0; // Return 0 if no comparison was done
   });
 
   // --- Render Sort Icon ---
@@ -164,7 +175,7 @@ const ReportsTable = ({
                     </>
                   )}
                   <TableCell>
-                    <Badge variant={getStatusBadgeVariant(report.status) as ReportStatus}>
+                    <Badge variant={getStatusBadgeVariant(report.status) as BadgeVariant}>
                       {report.status}
                     </Badge>
                   </TableCell>

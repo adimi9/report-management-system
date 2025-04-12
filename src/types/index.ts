@@ -13,6 +13,7 @@ export interface User {
 export type ReportType = "review" | "user" | "business" | "service" | "other";
 export type ReportStatus = "pending" | "resolved" | "rejected";
 export type ReportReason = "spam" | "harassment" | "misleading" | "other";
+export type BadgeVariant = "default" | "success" | "destructive" | "outline" | null | undefined;
 
 export interface Report {
   id: string;
