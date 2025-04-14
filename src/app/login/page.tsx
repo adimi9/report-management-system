@@ -102,8 +102,8 @@ const LoginPage = () => {
                       </FormControl>
                       <FormMessage />
                       <p className="text-xs text-muted-foreground">
-                      For demo: use &quot;admin@example.com&quot; and &quot;password&quot; for admin access,
-                      or &quot;user@example.com&quot; and &quot;password&quot; for user access.
+                      For demo: use &quot;admin@servihub.com&quot; and &quot;password&quot; for admin access,
+                      or &quot;user1@servihub.com&quot; and &quot;password&quot; for user access.
                       </p>
                     </FormItem>
                   )}
